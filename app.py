@@ -8,6 +8,8 @@ import smtplib
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
+
+# labels
 crop_list=["apple","banana","blackgram","chickpea","coconut","coffee",
            "cotton","grapes","jute","kidneybeans","mango","mothbeans","mungbean",
            "muskmelon","orange","papaya","pigeonpeas","pomegranate","rice",
@@ -60,8 +62,8 @@ def Recommand_crop():
 
 @app.route("/contact_us.html",methods=['POST','GET'])
 def contact_us():
-    my_email = "codewithmrpy@gmail.com"
-    password = "eaflyqlwydcznrgt"
+#     my_email = "type your own mail id"
+#     password = "get your own app password"
     recipient= ["ranitsarkar71@gmail.com"]
     if request.method=="POST":
         name = request.form['name']
