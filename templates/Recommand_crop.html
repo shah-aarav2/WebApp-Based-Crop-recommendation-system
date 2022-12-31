@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>ML-based crop recommandation system</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+  <body>
+    <section id="part_1">
+      <div class="container1">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">CROP RECOMMANDATION SYSTEM</div>
+          <div class="col-lg-6 col-sm-6">
+            <ul class="nav nav-pills justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Recommand_crop.html">Crop recommandation Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact_us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="form_part">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div
+              id="carouselExampleFade"
+              class="carousel slide carousel-fade"
+              data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="3000">
+                  <img
+                    src="static/rice_bowl_crop.png"
+                    class="img1 d-block w-100 img-fluid"
+                    alt="..."/>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                  <img
+                    src="static/wheat_bowl.png"
+                    class="img1 d-block w-100 img-fluid"
+                    alt="..."/>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                  <img
+                    src="static/riceplant.png"
+                    class="img1 d-block w-100 img-fluid"
+                    alt="..."/>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <form action="/Recommand_crop.html" method='post'>
+            <div class="form-group">
+              <label for="Nitrogen">NITROGEN CONTENT</label>
+              <input type="text" class="form-control" id="nitrogen" name="nitrogen" value=0 placeholder="Enter the nitrogen content of the soil">
+            </div>
+            <div class="form-group">
+              <label for="Phosphorus">Phosphorus CONTENT</label>
+              <input type="text" class="form-control" id="phosphorus" name="phosphorus" value=0 placeholder="Enter the Phosphorus content of the soil">
+            </div>
+            <div class="form-group">
+              <label for="Potassium">Potassium CONTENT</label>
+              <input type="text" class="form-control" id="potassium" name="potassium" value=0 placeholder="Enter the Potassium content of the soil">
+            </div>
+            <div class="form-group">
+              <label for="Temperature">Temperature</label>
+              <input type="text" class="form-control" id="temperature" name="temperature" value=0 placeholder="Enter the ambient temperature">
+            </div>
+            <div class="form-group">
+              <label for="Humidity">Humidity</label>
+              <input type="text" class="form-control" id="humidity" name="humidity" value=0 placeholder="Enter the Humidity">
+            </div>
+            <div class="form-group">
+              <label for="Ph">Ph of Soil</label>
+              <input type="text" class="form-control" id="ph" name="ph" value=0 placeholder="Enter the Ph content in the soil">
+            </div>
+            <div class="form-group">
+              <label for="Rainfall">Rainfall-depth</label>
+              <input type="text" class="form-control" id="rainfall" name="rainfall" value=0 placeholder="Enter the rainfall depth">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="Result">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div>
+              <h1>PARAMETERS</h1><br>
+              <ul>
+                <li>NITROGEN CONTENT: {{nitrogen}}</li>
+                <li>Phosphorus CONTENT: {{phosphorus}}</li>
+                <li>Potassium CONTENT: {{potassium}}</li>
+                <li>Temperature: {{temperature}}</li>
+                <li>Humidity: {{humidity}}</li>
+                <li>Ph of Soil: {{ph}}</li>
+                <li>Rainfall-depth: {{rainfall}}</li>
+              </ul>
+              <p> As per your given parameters and guidelines
+                by ICAR. The predicts your suitable crop for agriculture
+                field is {{nitrovalue}}</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="result-box">
+              <div class="card">
+                <img class="card-img-top" src="static/loading-soon.png" alt="Card image cap">
+                <div class="card-body">
+                  <h2><p class="card-text">CROP NAME: {{nitrovalue}}</p></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
